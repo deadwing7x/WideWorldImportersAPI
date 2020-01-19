@@ -1,0 +1,39 @@
+﻿@model IEnumerable<WebApplication1.Models.Sales>
+@{
+    ViewBag.Title = "GetTotalSalesByStateProvinceForAYear";
+}
+
+@{ var message = ViewBag.ErrorMessage; }
+<html>
+<body>
+    @if (message == null)
+    {
+        <div class="container body-content">
+            <h3>Total Sales by State Province for a particular year</h3>
+            <br />
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>State Province</th>
+                        <th>Total Sale</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var sales in Model)
+                    {
+                        <tr>
+                            <td>@sales.stateProvince</td>
+                            <td>@sales.totalSale</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <h2>@ViewBag.ErrorMessage</h2>
+    }
+</body>
+</html>
+

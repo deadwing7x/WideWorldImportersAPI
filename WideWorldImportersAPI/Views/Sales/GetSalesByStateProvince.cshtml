@@ -1,0 +1,22 @@
+﻿@model IEnumerable<WebApplication1.Models.Sales>
+@{
+    ViewBag.Title = "GetSalesByStateProvince";
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>State Province</th>
+            <th>Total Sale</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sales in Model)
+        {
+            <tr>
+                <td>@sales.stateProvince</td>
+                <td>@sales.totalSale</td>
+            </tr>
+        }
+    </tbody>
+</table>    

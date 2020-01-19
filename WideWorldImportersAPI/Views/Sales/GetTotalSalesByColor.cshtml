@@ -1,0 +1,36 @@
+﻿@model IEnumerable<WebApplication1.Models.Sales>
+@{
+    ViewBag.Title = "GetTotalSalesByColor";
+}
+
+@{ var message = ViewBag.ErrorMessage; }
+<html>
+<body>
+@if (message == null)
+{
+    <div class="container body-content">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Color</th>
+                    <th>Total Sale</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var sales in Model)
+                {
+                    <tr>
+                        <td>@sales.color</td>
+                        <td>@sales.totalSale</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else 
+{
+    <h2>@ViewBag.ErrorMessage</h2>
+} 
+</body>
+</html>
